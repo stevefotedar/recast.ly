@@ -6,9 +6,14 @@ class App extends React.Component {
   constructor (props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      video: exampleVideoData[0]
+    };
   }
-  handleClick (event) {
-    console.log('clicked');
+  handleClick (props) {
+    this.setState({
+      video: props.video
+    });
   }
   render () {
     return (
@@ -20,7 +25,7 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <div><h5><em>videoPlayer</em><VideoPlayer video = {exampleVideoData[0]}/></h5></div>
+            <div><h5><em>videoPlayer</em><VideoPlayer video = {this.state.video}/></h5></div>
           </div>
           <div className="col-md-5">
             <div><h5><em>videoList</em><VideoList videos = {exampleVideoData} handler = {this.handleClick}/></h5></div>
