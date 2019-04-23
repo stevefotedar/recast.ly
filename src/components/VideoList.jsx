@@ -4,11 +4,7 @@ var VideoList = (props) =>{
   return (
   
     <div className='video-list'>
-      <div><h5><em></em><VideoListEntry video={props.videos[0]}/></h5></div>
-      <div><h5><em></em><VideoListEntry video={props.videos[1]}/></h5></div>
-      <div><h5><em></em><VideoListEntry video={props.videos[2]}/></h5></div>
-      <div><h5><em></em><VideoListEntry video={props.videos[3]}/></h5></div>
-      <div><h5><em></em><VideoListEntry video={props.videos[4]}/></h5></div>
+      <div><h5><em></em>{props.videos.map(video => <VideoListEntry video = {video} />)}/></h5></div>
     </div>
   );
 };
